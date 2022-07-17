@@ -24,29 +24,41 @@
           <div class="navbar-collpse collpse show" id="navbarNavDropDown" style>
             <ul class="navbar-nav ml-auto">
               <li>
-                <%= link_to "Home", root_path,class: 'nav-link text-light' %>
+                <%= link_to root_path, class: 'nav-link text-light' do %>
+                  <i class="fas fa-home"></i> Home
+                <% end %>
               </li>
               <% if user_signed_in? %>-->
                 <li>
-
-                  <%= link_to "Users" %>
+                  <%= link_to root_path, class: 'nav-link text-light' do %>
+                    <i class="fas fa-users"></i> Users
+                  <% end %>
                 </li>
                 <li>
-                  <%= link_to "Books" %>
+                  <%= link_to root_path, class: 'nav-link text-light' do %>
+                    <i class="fas fa-book-open"></i> Books
+                  <% end %>
                 </li>
                 <li>
-                  <%= link_to "Log out" %>
+                  <%= link_to root_path, class: 'nav-link text-light' do %>
+                    <i class="fas fa-sign-out-alt"></i> Log out
+                  <% end %>
                 </li>
               <% else %>
                 <li>
-                  <i class="fas fa-user"></i>
-                  <%= link_to "About" %>
+                  <%= link_to root_path, class: 'nav-link text-light' do %>
+                    <i class="fas fa-link"></i> About
+                  <% end %>
                 </li>
                 <li>
-                  <%= link_to "Sign up" %>
+                  <%= link_to root_path, class: 'nav-link text-light' do %>
+                    <i class="fas fa-user-plus"></i> Sign up
+                  <% end %>
                 </li>
                 <li>
-                  <%= link_to "Log in" %>
+                  <%= link_to root_path, class: 'nav-link text-light' do %>
+                    <i class="fas fa-sign-in-alt"></i> Log in
+                  <% end %>
                 </li>
               <% end %>
             </ul>
