@@ -32,6 +32,7 @@ config.hosts << "c6b0607b073e405987caee37b36a75be.vfs.cloud9.us-east-1.amazonaws
 
   # Store uploaded files on the local file system (see config/storage.yml for options).
   config.active_storage.service = :local
+  config.active_job.queue_adapter = :inline
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
