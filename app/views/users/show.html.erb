@@ -1,0 +1,13 @@
+<%= render 'user_info', user: @user %>
+<h2>Book detail</h2>
+<table class="table">
+  <tbody>
+    <tr>
+      <td>
+        <%= link_to user_path(@user) do %>
+          <%= image_tag @book
+        <% end %>
+      </td>
+    </tr>
+  </tbody>
+</table>

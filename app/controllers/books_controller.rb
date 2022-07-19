@@ -13,6 +13,11 @@ class BooksController < ApplicationController
     redirect_to book_path(@book)
   end
 
+  def show
+    @book = Book.new
+    @user = current_user
+  end
+
   private
 
   def book_params
