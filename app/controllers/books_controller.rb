@@ -15,7 +15,10 @@ class BooksController < ApplicationController
 
   def show
     @book = Book.new
-    @user = current_user
+    # @user = current_user
+    @book = Book.find(params[:id])
+    @user = @book.user
+    # @bookから、belongs_to: userで紐づけてあるので、userでそのブックを投稿したuserという意味になる。
   end
 
   private

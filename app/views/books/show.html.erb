@@ -5,8 +5,7 @@
     <tr>
       <td>
         <%= link_to user_path(@user) do %>
-          <!--このイメージタグらへんから-->
-          <%= image_tag @user.get_profile_image(100, 100) do %>
+          <%= image_tag @user.get_profile_image(100, 100) %>
         <% end %>
       </td>
     </tr>
