@@ -1,5 +1,5 @@
 class BooksController < ApplicationController
-  before_action :correct_user, only: [:edit, :update]
+  before_action :correct_user, only: [:edit]
 
   def index
     @book = Book.new
@@ -56,7 +56,7 @@ class BooksController < ApplicationController
     @book = Book.find(params[:id])
     @user = @book.user
     if @user == current_user
-      redirect_to edit_book_path(@book)
+      render "edit"
     else
       redirect_to books_path
     end
