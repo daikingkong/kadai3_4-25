@@ -10,6 +10,7 @@ class UsersController < ApplicationController
     @book.user_id = current_user.id
     @book.save
     redirect_to book_path(@book)
+
   end
 
   def index
@@ -29,6 +30,7 @@ class UsersController < ApplicationController
   def update
     @user = User.find(params[:id])
     @user.update(user_params)
+    flash[:notice] = "You have updated user successfully."
     redirect_to user_path(@user)
   end
 
