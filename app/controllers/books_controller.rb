@@ -1,4 +1,5 @@
 class BooksController < ApplicationController
+  before_action :correct_user, only: [:edit, :update]
 
   def index
     @book = Book.new
@@ -21,10 +22,8 @@ class BooksController < ApplicationController
 
   def show
     @book = Book.new
-    # @user = current_user
     @book = Book.find(params[:id])
     @user = @book.user
-    # @bookから、belongs_to: userで紐づけてあるので、userでそのブックを投稿したuserという意味になる。
   end
 
   def edit
@@ -51,6 +50,16 @@ class BooksController < ApplicationController
 
   def book_params
     params.require(:book).permit(:title, :body)
+  end
+
+  def correct_user
+    @book = Book.find(params[:id])
+    @user = @book.user
+    if @user == current_user
+      redirect_to edit_book_path(@book)
+    else
+      redirect_to books_path
+    end
   end
 
 end
