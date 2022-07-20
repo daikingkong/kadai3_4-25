@@ -1,13 +1,2 @@
 <%= render 'user_info', user: @user %>
-<h2>Books</h2>
-<table class="table">
-  <tbody>
-    <tr>
-      <td>
-        <%= link_to user_path(@user) do %>
-          <%= image_tag @user.get_profile_image(100, 100) %>
-        <% end %>
-      </td>
-    </tr>
-  </tbody>
-</table>
+<%= render 'books/books', books: @books %>
